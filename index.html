@@ -1,228 +1,117 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>DOTO STORE – Free Fire</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>DOTO STORE - Free Fire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0b0b0b;
-    color:#fff;
-}
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0b0b0b;
+      color:#fff;
+      text-align:center;
+    }
 
-/* HEADER */
-header{
-    background:linear-gradient(90deg,#ff9800,#ffb300,#ff9800);
-    padding:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
-    box-shadow:0 0 25px #ff9800;
-}
-header img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    box-shadow:0 0 20px #000;
-}
-header h1{
-    margin:0;
-    font-size:26px;
-}
-header span{
-    font-size:14px;
-    color:#222;
-}
+    /* HEADER */
+    header{
+      background:linear-gradient(90deg,#ff9800,#ffb300,#ff9800);
+      padding:20px;
+      box-shadow:0 0 25px #ff9800;
+    }
 
-/* NAV */
-nav{
-    display:flex;
-    justify-content:space-around;
-    background:#111;
-    padding:10px 0;
-}
-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:bold;
-}
+    header img{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      box-shadow:0 0 20px #000;
+      margin-bottom:10px;
+    }
 
-/* SECTION */
-section{
-    padding:20px;
-}
-.section-title{
-    font-size:22px;
-    margin-bottom:15px;
-}
+    header h1{
+      margin:5px 0 0;
+      font-size:28px;
+    }
 
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:15px;
-}
-.card{
-    background:#161616;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 0 15px rgba(0,0,0,0.8);
-    text-align:center;
-}
-.card img{
-    width:100%;
-    height:120px;
-    object-fit:cover;
-}
-.card h3{
-    margin:10px 0 5px;
-}
-.price{
-    color:#00ff9c;
-    font-size:20px;
-    margin-bottom:10px;
-}
-.card button{
-    width:80%;
-    margin-bottom:15px;
-    padding:10px;
-    border:none;
-    border-radius:25px;
-    background:linear-gradient(90deg,#ff9800,#ffb300);
-    font-size:16px;
-    font-weight:bold;
-}
+    header span{
+      font-size:14px;
+      color:#222;
+      font-weight:bold;
+    }
 
-/* MUSIC BUTTON */
-.music-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#ff9800;
-    color:#000;
-    border-radius:50%;
-    width:55px;
-    height:55px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    box-shadow:0 0 20px #ff9800;
-}
+    /* CONTENT */
+    .container{
+      padding:20px;
+    }
 
-/* PRIVACY */
-.privacy{
-    font-size:14px;
-    color:#ccc;
-    line-height:1.8;
-}
-</style>
+    .card{
+      background:#111;
+      border:1px solid #ff9800;
+      border-radius:10px;
+      padding:15px;
+      margin:15px auto;
+      max-width:300px;
+      box-shadow:0 0 15px #ff9800;
+    }
+
+    .card h3{
+      margin-top:0;
+      color:#ffb300;
+    }
+
+    button{
+      background:#ff9800;
+      border:none;
+      padding:10px 20px;
+      border-radius:20px;
+      font-size:16px;
+      cursor:pointer;
+      margin-top:10px;
+    }
+
+    button:hover{
+      background:#ffb300;
+    }
+
+    footer{
+      margin-top:30px;
+      padding:10px;
+      font-size:12px;
+      color:#aaa;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <!-- HEADER -->
+  <header>
+    <img src="Picsart_26-01-03_03-21-56-182.png" alt="DOTO STORE Logo">
+    <h1>DOTO STORE</h1>
+    <span>Free Fire Charging</span>
+  </header>
 
-<header>
-    <img src="logo.png">
-    <div>
-        <h1>DOTO STORE</h1>
-        <span>Free Fire Charging</span>
+  <!-- CONTENT -->
+  <div class="container">
+
+    <div class="card">
+      <h3>شحن جواهر</h3>
+      <p>شحن سريع وآمن</p>
+      <button>اشحن الآن</button>
     </div>
-</header>
 
-<nav>
-    <a href="#shop">الشحن</a>
-    <a href="#pay">الدفع</a>
-    <a href="#privacy">الخصوصية</a>
-</nav>
-
-<section id="shop">
-    <div class="section-title">💎 شحن Free Fire</div>
-
-    <div class="cards">
-
-        <div class="card">
-            <img src="images/monthly.jpg">
-            <h3>عضوية شهرية</h3>
-            <div class="price">350 جنيه</div>
-            <button onclick="buy('عضوية شهرية',350)">شراء</button>
-        </div>
-
-        <div class="card">
-            <img src="images/weekly.jpg">
-            <h3>عضوية أسبوعية</h3>
-            <div class="price">100 جنيه</div>
-            <button onclick="buy('عضوية أسبوعية',100)">شراء</button>
-        </div>
-
-        <div class="card">
-            <img src="images/level.jpg">
-            <h3>تصريح المستوى</h3>
-            <div class="price">25 جنيه</div>
-            <button onclick="buy('تصريح المستوى',25)">شراء</button>
-        </div>
-
-        <div class="card">
-            <img src="images/pass.jpg">
-            <h3>البويا باس</h3>
-            <div class="price">50 جنيه</div>
-            <button onclick="buy('البويا باس',50)">شراء</button>
-        </div>
-
-        <div class="card">
-            <img src="images/diamond.jpg">
-            <h3>100 💎</h3>
-            <div class="price">50 جنيه</div>
-            <button onclick="buy('100 جواهر',50)">شراء</button>
-        </div>
-
-        <div class="card">
-            <img src="images/diamond.jpg">
-            <h3>1000 💎</h3>
-            <div class="price">450 جنيه</div>
-            <button onclick="buy('1000 جواهر',450)">شراء</button>
-        </div>
-
+    <div class="card">
+      <h3>عروض خاصة</h3>
+      <p>خصومات لفترة محدودة</p>
+      <button>شوف العروض</button>
     </div>
-</section>
 
-<section id="privacy">
-    <div class="section-title">🔒 سياسة الخصوصية</div>
-    <div class="privacy">
-        • المتجر لا يحتفظ بأي بيانات.<br>
-        • يتم استخدام الـ ID فقط للشحن.<br>
-        • لا يوجد استرجاع بعد الدفع.<br>
-        • كل الطلبات تتم عبر واتساب فقط.
-    </div>
-</section>
+  </div>
 
-<div class="music-btn" onclick="toggleMusic()">🎵</div>
-
-<script>
-let playing=false;
-function toggleMusic(){
-    let m=document.getElementById("bgMusic");
-    if(!playing){m.play();playing=true;}
-    else{m.pause();playing=false;}
-}
-
-function buy(item,price){
-    toggleMusic();
-    let id=prompt("اكتب ID Free Fire:");
-    if(!id) return;
-    let msg=`طلب شحن Free Fire\n${item}\nالسعر: ${price} جنيه\nID: ${id}\nالدفع Vodafone Cash: 01036733858`;
-    let url=`https://wa.me/201104275701?text=${encodeURIComponent(msg)}`;
-    window.open(url,"_blank");
-}
-</script>
+  <footer>
+    © 2026 DOTO STORE - All Rights Reserved
+  </footer>
 
 </body>
-  </html>
+    </html>
