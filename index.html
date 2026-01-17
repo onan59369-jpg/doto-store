@@ -1,78 +1,97 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>DOTO STORE – Free Fire</title>
+<title>DOTO STORE | شحن فري فاير</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background:#000;
-    color:#ffd700;
-}
-header{
-    background:#0b0b0b;
-    text-align:center;
-    padding:20px;
-    border-bottom:2px solid #ffd700;
-    box-shadow:0 0 25px #ffd70055;
-}
-header h1{
-    margin:0;
-    letter-spacing:2px;
-}
-header p{
-    margin:5px 0 0;
+    font-family: Tahoma, Arial;
+    background: linear-gradient(135deg,#000814,#001d3d);
     color:#fff;
 }
-section{
+header{
+    text-align:center;
+    padding:40px 15px;
+}
+header h1{
+    color:#00b4ff;
+    font-size:26px;
+}
+header p{
+    color:#cce7ff;
+    font-size:15px;
+}
+.container{
+    max-width:1100px;
+    margin:auto;
     padding:20px;
 }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:15px;
+}
 .card{
-    background:#0f0f0f;
-    padding:18px;
-    border-radius:12px;
-    margin-bottom:18px;
-    box-shadow:0 0 15px #ffd70033;
+    background:#000;
+    border:1px solid #00b4ff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
 }
-h3{
-    margin-top:0;
-    color:#ffd700;
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00b4ff;
 }
-input, select, button{
+.card h3{
+    color:#00b4ff;
+}
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:18px;
+    color:#fff;
+}
+.hidden{display:none;}
+
+input,button{
     width:100%;
     padding:12px;
     margin-top:10px;
+    border-radius:10px;
     border:none;
-    border-radius:8px;
     font-size:16px;
 }
-input, select{
-    background:#000;
-    color:#ffd700;
-    border:1px solid #ffd70055;
+input{
+    background:#001d3d;
+    color:#fff;
+    border:1px solid #00b4ff;
 }
 button{
-    background:linear-gradient(45deg,#ffd700,#ffb300);
+    background:#00b4ff;
     color:#000;
     font-weight:bold;
     cursor:pointer;
 }
-button:hover{
-    opacity:0.9;
-}
-.price{
-    color:#fff;
-    font-size:15px;
-}
-footer{
-    text-align:center;
-    padding:15px;
-    font-size:14px;
+button:hover{background:#0096c7;}
+
+.footer{
+    margin-top:40px;
+    font-size:13px;
     color:#aaa;
-    border-top:1px solid #ffd70033;
+    text-align:center;
+}
+.footer a{color:#00b4ff;text-decoration:none;}
+.box{
+    background:#000;
+    border:1px solid #00b4ff;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
 }
 </style>
 </head>
@@ -80,80 +99,118 @@ footer{
 <body>
 
 <header>
-    <h1>DOTO STORE</h1>
-    <p>شحن Free Fire – Vodafone Cash</p>
+<h1>🔥 أقوى موقع لشحن جواهر فري فاير 🔥</h1>
+<p>شحن سريع – أمان تام – أسعار نار 💎</p>
 </header>
 
-<section>
+<div class="container">
 
-<div class="card">
-<h3>🆔 بيانات اللاعب</h3>
-<input type="text" id="playerId" placeholder="اكتب ID اللاعب">
+<h2>اختر الباقة 👇</h2>
+
+<div class="cards" id="cards">
+<div class="card" onclick="selectPack('عضوية شهرية',350)">
+<h3>عضوية شهرية</h3><span>350 جنيه</span>
 </div>
 
-<div class="card">
-<h3>🔥 الباقات والخدمات</h3>
-
-<select id="service">
-<option value="">اختر الخدمة</option>
-
-<option value="عضوية شهرية – 350ج">عضوية شهرية – 350ج (لحد شهر 1)</option>
-<option value="عضوية أسبوعية – 100ج">عضوية أسبوعية – 100ج (لحد شهر 1)</option>
-<option value="تصريحات المستوى – 25ج">تصريحات المستوى – 25ج</option>
-<option value="البويا باس – 50ج">البويا باس – 50ج</option>
-<option value="الضروبات الدولا – 50ج">الضروبات الدولا – 50ج ✓أفضل</option>
-
-<option value="100💎 – 50ج">100💎 – 50ج</option>
-<option value="200💎 – 100ج">200💎 – 100ج</option>
-<option value="300💎 – 130ج">300💎 – 130ج</option>
-<option value="500💎 – 250ج">500💎 – 250ج</option>
-<option value="1000💎 – 450ج">1000💎 – 450ج</option>
-<option value="2200💎 – 900ج">2200💎 – 900ج</option>
-<option value="3640💎 – 1400ج">3640💎 – 1400ج</option>
-
-</select>
-
-<p class="price">
-💰 رقم التحويل Vodafone Cash:<br>
-<strong>01036733858</strong>
-</p>
-
-<button onclick="sendWhatsApp()">إتمام الطلب عبر واتساب</button>
+<div class="card" onclick="selectPack('عضوية أسبوعية',100)">
+<h3>عضوية أسبوعية</h3><span>100 جنيه</span>
 </div>
 
-<div class="card">
-<h3>🔒 سياسة الخصوصية</h3>
+<div class="card" onclick="selectPack('تصريحات المستوى',25)">
+<h3>تصريحات المستوى</h3><span>25 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('البويا باس',50)">
+<h3>البويا باس</h3><span>50 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('100 جوهرة',50)">
+<h3>💎 100</h3><span>50 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('200 جوهرة',100)">
+<h3>💎 200</h3><span>100 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('300 جوهرة',130)">
+<h3>💎 300</h3><span>130 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('500 جوهرة',250)">
+<h3>💎 500</h3><span>250 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('1000 جوهرة',450)">
+<h3>💎 1000</h3><span>450 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('2200 جوهرة',900)">
+<h3>💎 2200</h3><span>900 جنيه</span>
+</div>
+
+<div class="card" onclick="selectPack('3640 جوهرة',1400)">
+<h3>💎 3640</h3><span>1400 جنيه</span>
+</div>
+</div>
+
+<div id="order" class="box hidden">
+<h3 id="packName"></h3>
+
+<input type="text" id="playerId" placeholder="اكتب ID فري فاير">
+
+<p>💳 التحويل على فودافون كاش:</p>
+<b>01036733858</b>
+
+<button onclick="sendOrder()">تم الدفع – إرسال الطلب</button>
+</div>
+
+<div class="box">
+<h3>🔐 سياسة الخصوصية</h3>
 <p>
-نحن لا نحتفظ بأي بيانات خاصة بالعملاء.  
-جميع البيانات تُستخدم فقط لتنفيذ عملية الشحن ولا يتم مشاركتها مع أي جهة.
+نحن في DOTO STORE نحترم خصوصيتك تمامًا.
+أي بيانات يتم إدخالها (مثل ID اللعبة) تُستخدم فقط لغرض الشحن،
+ولا يتم مشاركتها مع أي طرف ثالث.
+الدفع يتم خارج الموقع عبر فودافون كاش، والموقع لا يحتفظ بأي بيانات مالية.
 </p>
 </div>
 
-</section>
+<div class="footer">
+© 2026 DOTO STORE – جميع الحقوق محفوظة  
+<br>
+<a href="https://wa.me/201104275701">تواصل واتساب</a>
+</div>
 
-<footer>
-📞 واتساب: 01104275701<br>
-© 2026 DOTO STORE
-</footer>
+</div>
 
 <script>
-function sendWhatsApp(){
-    var id = document.getElementById("playerId").value;
-    var service = document.getElementById("service").value;
+let selectedPack = "";
+let selectedPrice = "";
 
-    if(id === "" || service === ""){
-        alert("من فضلك اكتب ID واختر الخدمة");
+function selectPack(name,price){
+    selectedPack = name;
+    selectedPrice = price;
+    document.getElementById("order").classList.remove("hidden");
+    document.getElementById("packName").innerText =
+    "📦 الباقة: " + name + " | 💰 السعر: " + price + " جنيه";
+}
+
+function sendOrder(){
+    let id = document.getElementById("playerId").value;
+    if(id===""){
+        alert("من فضلك اكتب ID");
         return;
     }
 
-    var msg = "طلب شحن من DOTO STORE%0A"
-            + "ID اللاعب: " + id + "%0A"
-            + "الخدمة: " + service + "%0A"
-            + "الدفع Vodafone Cash";
+    let msg = `🔥 طلب شحن جديد 🔥
+الباقة: ${selectedPack}
+السعر: ${selectedPrice} جنيه
+ID اللاعب: ${id}
+تم التحويل على فودافون كاش ✔️`;
 
-    window.open("https://wa.me/201104275701?text=" + msg, "_blank");
+    let url = "https://wa.me/201104275701?text=" + encodeURIComponent(msg);
+    window.open(url,"_blank");
 }
 </script>
 
 </body>
-  </html>
+    </html>
