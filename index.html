@@ -1,216 +1,173 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>DOTO STORE | شحن فري فاير</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOTO STORE</title>
 
 <style>
 body{
     margin:0;
-    font-family: Tahoma, Arial;
-    background: linear-gradient(135deg,#000814,#001d3d);
-    color:#fff;
+    font-family:Tahoma, Arial;
+    background:#000;
+    color:#00bfff;
+    text-align:center;
 }
 header{
-    text-align:center;
-    padding:40px 15px;
-}
-header h1{
-    color:#00b4ff;
-    font-size:26px;
-}
-header p{
-    color:#cce7ff;
-    font-size:15px;
-}
-.container{
-    max-width:1100px;
-    margin:auto;
     padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    border-bottom:2px solid #00bfff;
+    text-shadow:0 0 10px #00bfff;
 }
-.cards{
+section{
+    padding:20px;
+    display:none;
+}
+.active{
+    display:block;
+}
+.packages{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     gap:15px;
 }
 .card{
-    background:#000;
-    border:1px solid #00b4ff;
+    border:2px solid #00bfff;
     border-radius:15px;
-    padding:20px;
-    text-align:center;
+    padding:15px;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(0,191,255,0.3);
 }
 .card:hover{
     transform:scale(1.05);
-    box-shadow:0 0 15px #00b4ff;
+    box-shadow:0 0 25px #00bfff;
 }
-.card h3{
-    color:#00b4ff;
-}
-.card span{
-    display:block;
+.price{
     margin-top:10px;
     font-size:18px;
     color:#fff;
 }
-.hidden{display:none;}
-
-input,button{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border-radius:10px;
+button{
+    background:#00bfff;
+    color:#000;
     border:none;
+    padding:12px 20px;
+    border-radius:25px;
     font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    box-shadow:0 0 15px #00bfff;
+}
+button:hover{
+    background:#009acd;
 }
 input{
-    background:#001d3d;
-    color:#fff;
-    border:1px solid #00b4ff;
-}
-button{
-    background:#00b4ff;
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
-}
-button:hover{background:#0096c7;}
-
-.footer{
-    margin-top:40px;
-    font-size:13px;
-    color:#aaa;
+    width:90%;
+    padding:12px;
+    border-radius:10px;
+    border:2px solid #00bfff;
+    background:#000;
+    color:#00bfff;
+    font-size:16px;
+    margin-top:15px;
     text-align:center;
 }
-.footer a{color:#00b4ff;text-decoration:none;}
-.box{
-    background:#000;
-    border:1px solid #00b4ff;
-    padding:20px;
-    border-radius:15px;
-    margin-top:20px;
+.confirm{
+    font-size:18px;
+    line-height:1.8;
+    color:#fff;
+}
+footer{
+    padding:15px;
+    border-top:1px solid #00bfff;
+    font-size:14px;
+    color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>🔥 أقوى موقع لشحن جواهر فري فاير 🔥</h1>
-<p>شحن سريع – أمان تام – أسعار نار 💎</p>
-</header>
+<header>🔥 DOTO STORE 🔥</header>
 
-<div class="container">
+<!-- صفحة الباقات -->
+<section id="step1" class="active">
+    <h2>👇 اختر الباقة</h2>
+    <div class="packages">
+        <div class="card" onclick="choose('عضوية أسبوعية - 100 جنيه')">
+            عضوية أسبوعية
+            <div class="price">100 جنيه</div>
+        </div>
+        <div class="card" onclick="choose('عضوية شهرية - 350 جنيه')">
+            عضوية شهرية
+            <div class="price">350 جنيه</div>
+        </div>
+        <div class="card" onclick="choose('تصريحات المستوى - 25 جنيه')">
+            تصريحات المستوى
+            <div class="price">25 جنيه</div>
+        </div>
+        <div class="card" onclick="choose('بويا باس - 50 جنيه')">
+            بويا باس
+            <div class="price">50 جنيه</div>
+        </div>
+        <div class="card" onclick="choose('100 💎 - 50 جنيه')">
+            100 💎
+            <div class="price">50 جنيه</div>
+        </div>
+        <div class="card" onclick="choose('200 💎 - 100 جنيه')">
+            200 💎
+            <div class="price">100 جنيه</div>
+        </div>
+    </div>
+</section>
 
-<h2>اختر الباقة 👇</h2>
+<!-- صفحة ID -->
+<section id="step2">
+    <h2>🎮 اكتب ID اللاعب</h2>
+    <input type="text" id="playerId" placeholder="اكتب الـ ID هنا">
+    <br>
+    <button onclick="goConfirm()">متابعة</button>
+</section>
 
-<div class="cards" id="cards">
-<div class="card" onclick="selectPack('عضوية شهرية',350)">
-<h3>عضوية شهرية</h3><span>350 جنيه</span>
-</div>
+<!-- صفحة التأكيد -->
+<section id="step3">
+    <h2>✅ تأكيد الطلب</h2>
+    <div class="confirm" id="confirmText"></div>
+    <p style="color:#00bfff;margin-top:20px;">
+        بعد الدفع سيتم تنفيذ الطلب فورًا 🚀
+    </p>
+</section>
 
-<div class="card" onclick="selectPack('عضوية أسبوعية',100)">
-<h3>عضوية أسبوعية</h3><span>100 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('تصريحات المستوى',25)">
-<h3>تصريحات المستوى</h3><span>25 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('البويا باس',50)">
-<h3>البويا باس</h3><span>50 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('100 جوهرة',50)">
-<h3>💎 100</h3><span>50 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('200 جوهرة',100)">
-<h3>💎 20ج0</h3><span>100 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('300 جوهرة',130)">
-<h3>💎 300</h3><span>130 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('500 جوهرة',250)">
-<h3>💎 500</h3><span>250 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('1000 جوهرة',450)">
-<h3>💎 1000</h3><span>450 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('2200 جوهرة',900)">
-<h3>💎 2200</h3><span>900 جنيه</span>
-</div>
-
-<div class="card" onclick="selectPack('3640 جوهرة',1400)">
-<h3>💎 3640</h3><span>1400 جنيه</span>
-</div>
-</div>
-
-<div id="order" class="box hidden">
-<h3 id="packName"></h3>
-
-<input type="text" id="playerId" placeholder="اكتب ID فري فاير">
-
-<p>💳 التحويل على فودافون كاش:</p>
-<b>01036733858</b>
-
-<button onclick="sendOrder()">تم الدفع – إرسال الطلب</button>
-</div>
-
-<div class="box">
-<h3>🔐 سياسة الخصوصية</h3>
-<p>
-نحن في DOTO STORE نحترم خصوصيتك تمامًا.
-أي بيانات يتم إدخالها (مثل ID اللعبة) تُستخدم فقط لغرض الشحن،
-ولا يتم مشاركتها مع أي طرف ثالث.
-الدفع يتم خارج الموقع عبر فودافون كاش، والموقع لا يحتفظ بأي بيانات مالية.
-</p>
-</div>
-
-<div class="footer">
-© 2026 DOTO STORE – جميع الحقوق محفوظة  
-<br>
-<a href="https://wa.me/201104275701">تواصل واتساب</a>
-</div>
-
-</div>
+<footer>
+    دعم واتساب: 01104275701 <br>
+    الدفع Vodafone Cash: 01036733858
+</footer>
 
 <script>
-let selectedPack = "";
-let selectedPrice = "";
+let selectedPackage = "";
 
-function selectPack(name,price){
-    selectedPack = name;
-    selectedPrice = price;
-    document.getElementById("order").classList.remove("hidden");
-    document.getElementById("packName").innerText =
-    "📦 الباقة: " + name + " | 💰 السعر: " + price + " جنيه";
+function choose(pkg){
+    selectedPackage = pkg;
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
 }
 
-function sendOrder(){
+function goConfirm(){
     let id = document.getElementById("playerId").value;
-    if(id===""){
-        alert("من فضلك اكتب ID");
+    if(id === ""){
+        alert("اكتب ID اللاعب");
         return;
     }
-
-    let msg = `🔥 طلب شحن جديد 🔥
-الباقة: ${selectedPack}
-السعر: ${selectedPrice} جنيه
-ID اللاعب: ${id}
-تم التحويل على فودافون كاش ✔️`;
-
-    let url = "https://wa.me/201104275701?text=" + encodeURIComponent(msg);
-    window.open(url,"_blank");
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step3").classList.add("active");
+    document.getElementById("confirmText").innerHTML =
+        "📦 الباقة: " + selectedPackage + "<br>" +
+        "🎮 ID اللاعب: " + id + "<br><br>" +
+        "💙 شكراً لاختيارك DOTO STORE";
 }
 </script>
 
 </body>
-</html>
+                </html>
