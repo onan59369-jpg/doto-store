@@ -1,117 +1,159 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>DOTO STORE - Free Fire</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>DOTO STORE – Free Fire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#0b0b0b;
-      color:#fff;
-      text-align:center;
-    }
-
-    /* HEADER */
-    header{
-      background:linear-gradient(90deg,#ff9800,#ffb300,#ff9800);
-      padding:20px;
-      box-shadow:0 0 25px #ff9800;
-    }
-
-    header img{
-      width:80px;
-      height:80px;
-      border-radius:50%;
-      box-shadow:0 0 20px #000;
-      margin-bottom:10px;
-    }
-
-    header h1{
-      margin:5px 0 0;
-      font-size:28px;
-    }
-
-    header span{
-      font-size:14px;
-      color:#222;
-      font-weight:bold;
-    }
-
-    /* CONTENT */
-    .container{
-      padding:20px;
-    }
-
-    .card{
-      background:#111;
-      border:1px solid #ff9800;
-      border-radius:10px;
-      padding:15px;
-      margin:15px auto;
-      max-width:300px;
-      box-shadow:0 0 15px #ff9800;
-    }
-
-    .card h3{
-      margin-top:0;
-      color:#ffb300;
-    }
-
-    button{
-      background:#ff9800;
-      border:none;
-      padding:10px 20px;
-      border-radius:20px;
-      font-size:16px;
-      cursor:pointer;
-      margin-top:10px;
-    }
-
-    button:hover{
-      background:#ffb300;
-    }
-
-    footer{
-      margin-top:30px;
-      padding:10px;
-      font-size:12px;
-      color:#aaa;
-    }
-  </style>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#000;
+    color:#ffd700;
+}
+header{
+    background:#0b0b0b;
+    text-align:center;
+    padding:20px;
+    border-bottom:2px solid #ffd700;
+    box-shadow:0 0 25px #ffd70055;
+}
+header h1{
+    margin:0;
+    letter-spacing:2px;
+}
+header p{
+    margin:5px 0 0;
+    color:#fff;
+}
+section{
+    padding:20px;
+}
+.card{
+    background:#0f0f0f;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:18px;
+    box-shadow:0 0 15px #ffd70033;
+}
+h3{
+    margin-top:0;
+    color:#ffd700;
+}
+input, select, button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+input, select{
+    background:#000;
+    color:#ffd700;
+    border:1px solid #ffd70055;
+}
+button{
+    background:linear-gradient(45deg,#ffd700,#ffb300);
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{
+    opacity:0.9;
+}
+.price{
+    color:#fff;
+    font-size:15px;
+}
+footer{
+    text-align:center;
+    padding:15px;
+    font-size:14px;
+    color:#aaa;
+    border-top:1px solid #ffd70033;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="Picsart_26-01-03_03-21-56-182.png" alt="DOTO STORE Logo">
+<header>
     <h1>DOTO STORE</h1>
-    <span>Free Fire Charging</span>
-  </header>
+    <p>شحن Free Fire – Vodafone Cash</p>
+</header>
 
-  <!-- CONTENT -->
-  <div class="container">
+<section>
 
-    <div class="card">
-      <h3>شحن جواهر</h3>
-      <p>شحن سريع وآمن</p>
-      <button>اشحن الآن</button>
-    </div>
+<div class="card">
+<h3>🆔 بيانات اللاعب</h3>
+<input type="text" id="playerId" placeholder="اكتب ID اللاعب">
+</div>
 
-    <div class="card">
-      <h3>عروض خاصة</h3>
-      <p>خصومات لفترة محدودة</p>
-      <button>شوف العروض</button>
-    </div>
+<div class="card">
+<h3>🔥 الباقات والخدمات</h3>
 
-  </div>
+<select id="service">
+<option value="">اختر الخدمة</option>
 
-  <footer>
-    © 2026 DOTO STORE - All Rights Reserved
-  </footer>
+<option value="عضوية شهرية – 350ج">عضوية شهرية – 350ج (لحد شهر 1)</option>
+<option value="عضوية أسبوعية – 100ج">عضوية أسبوعية – 100ج (لحد شهر 1)</option>
+<option value="تصريحات المستوى – 25ج">تصريحات المستوى – 25ج</option>
+<option value="البويا باس – 50ج">البويا باس – 50ج</option>
+<option value="الضروبات الدولا – 50ج">الضروبات الدولا – 50ج ✓أفضل</option>
+
+<option value="100💎 – 50ج">100💎 – 50ج</option>
+<option value="200💎 – 100ج">200💎 – 100ج</option>
+<option value="300💎 – 130ج">300💎 – 130ج</option>
+<option value="500💎 – 250ج">500💎 – 250ج</option>
+<option value="1000💎 – 450ج">1000💎 – 450ج</option>
+<option value="2200💎 – 900ج">2200💎 – 900ج</option>
+<option value="3640💎 – 1400ج">3640💎 – 1400ج</option>
+
+</select>
+
+<p class="price">
+💰 رقم التحويل Vodafone Cash:<br>
+<strong>01036733858</strong>
+</p>
+
+<button onclick="sendWhatsApp()">إتمام الطلب عبر واتساب</button>
+</div>
+
+<div class="card">
+<h3>🔒 سياسة الخصوصية</h3>
+<p>
+نحن لا نحتفظ بأي بيانات خاصة بالعملاء.  
+جميع البيانات تُستخدم فقط لتنفيذ عملية الشحن ولا يتم مشاركتها مع أي جهة.
+</p>
+</div>
+
+</section>
+
+<footer>
+📞 واتساب: 01104275701<br>
+© 2026 DOTO STORE
+</footer>
+
+<script>
+function sendWhatsApp(){
+    var id = document.getElementById("playerId").value;
+    var service = document.getElementById("service").value;
+
+    if(id === "" || service === ""){
+        alert("من فضلك اكتب ID واختر الخدمة");
+        return;
+    }
+
+    var msg = "طلب شحن من DOTO STORE%0A"
+            + "ID اللاعب: " + id + "%0A"
+            + "الخدمة: " + service + "%0A"
+            + "الدفع Vodafone Cash";
+
+    window.open("https://wa.me/201104275701?text=" + msg, "_blank");
+}
+</script>
 
 </body>
-    </html>
+  </html>
