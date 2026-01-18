@@ -13,8 +13,6 @@ body{
     color:#00bfff;
     text-align:center;
 }
-
-/* شريط الخصوصية */
 .privacy-bar{
     font-size:12px;
     padding:8px;
@@ -22,18 +20,13 @@ body{
     color:#aaa;
     border-bottom:1px solid #00bfff;
 }
-.privacy-bar span{
-    color:#00bfff;
-}
-
-/* الترحيب */
+.privacy-bar span{color:#00bfff;}
 .welcome{
     margin:10px 0;
     font-size:14px;
     color:#fff;
     text-shadow:0 0 8px #00bfff;
 }
-
 header{
     padding:15px;
     font-size:26px;
@@ -41,13 +34,8 @@ header{
     border-bottom:2px solid #00bfff;
     text-shadow:0 0 15px #00bfff;
 }
-
-section{
-    display:none;
-    padding:20px;
-}
+section{display:none;padding:20px;}
 .active{display:block;}
-
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -64,12 +52,8 @@ section{
     box-shadow:0 0 30px #00bfff;
     transform:scale(1.05);
 }
-.price{
-    color:#fff;
-    margin-top:10px;
-    font-size:18px;
-}
-input{
+.price{color:#fff;margin-top:10px;font-size:18px;}
+input, .file{
     width:90%;
     padding:12px;
     border-radius:10px;
@@ -77,7 +61,7 @@ input{
     background:#000;
     color:#00bfff;
     font-size:16px;
-    text-align:center;
+    margin-top:10px;
 }
 button{
     margin-top:20px;
@@ -91,24 +75,18 @@ button{
     box-shadow:0 0 20px #00bfff;
 }
 button:hover{background:#009acd;}
-.info{
-    font-size:18px;
-    color:#fff;
-    line-height:1.8;
-}
+.info{font-size:18px;color:#fff;line-height:1.8;}
 </style>
 </head>
 
 <body>
 
-<!-- سياسة الخصوصية -->
 <div class="privacy-bar">
-🔒 <span>سياسة الخصوصية:</span> بياناتك آمنة، ولا يتم حفظ أي معلومات خارج عملية الشحن فقط.
+🔒 <span>سياسة الخصوصية:</span> لا يتم حفظ أي بيانات، الشحن يتم يدوي بعد تأكيد التحويل.
 </div>
 
-<!-- ترحيب -->
 <div class="welcome">
-🔥 أهلاً بيك في مكان الشحن المضمون – السرعة والجودة عنواننا 🔥
+🔥 أقوى موقع شحن جواهر – أمان • سرعة • ثقة 🔥
 </div>
 
 <header>🔥 DOTO STORE 🔥</header>
@@ -116,69 +94,13 @@ button:hover{background:#009acd;}
 <!-- صفحة 1 -->
 <section id="s1" class="active">
 <h2>👇 اختر الشحنة</h2>
-
 <div class="cards">
-
-<div class="card" onclick="choose('عضوية شهرية (لحد شهر 1)','350')">
-عضوية شهرية
-<div class="price">350 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('عضوية أسبوعية (لحد شهر 1)','100')">
-عضوية أسبوعية
-<div class="price">100 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('تصريحات المستوى (لحد شهر 1)','25')">
-تصريحات المستوى
-<div class="price">25 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('البويا باس (لحد شهر 1)','50')">
-البويا باس
-<div class="price">50 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('الضربات الدولا ✓ أفضل','50')">
-الضربات الدولا
-<div class="price">50 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('100 💎','50')">
-100 💎
-<div class="price">50 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('200 💎','100')">
-200 💎
-<div class="price">100 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('300 💎','130')">
-300 💎
-<div class="price">130 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('500 💎','250')">
-500 💎
-<div class="price">250 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('1000 💎','450')">
-1000 💎
-<div class="price">450 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('2200 💎','900')">
-2200 💎
-<div class="price">900 جنيه</div>
-</div>
-
-<div class="card" onclick="choose('3640 💎','1400')">
-3640 💎
-<div class="price">1400 جنيه</div>
-</div>
-
+<div class="card" onclick="choose('عضوية شهرية','350')">عضوية شهرية<div class="price">350 جنيه</div></div>
+<div class="card" onclick="choose('عضوية أسبوعية','100')">عضوية أسبوعية<div class="price">100 جنيه</div></div>
+<div class="card" onclick="choose('100 💎','50')">100 💎<div class="price">50 جنيه</div></div>
+<div class="card" onclick="choose('200 💎','100')">200 💎<div class="price">100 جنيه</div></div>
+<div class="card" onclick="choose('500 💎','250')">500 💎<div class="price">250 جنيه</div></div>
+<div class="card" onclick="choose('1000 💎','450')">1000 💎<div class="price">450 جنيه</div></div>
 </div>
 </section>
 
@@ -186,7 +108,6 @@ button:hover{background:#009acd;}
 <section id="s2">
 <h2>🎮 اكتب ID اللاعب</h2>
 <input id="playerId" placeholder="ID هنا">
-<br>
 <button onclick="goPay()">متابعة</button>
 </section>
 
@@ -195,52 +116,49 @@ button:hover{background:#009acd;}
 <h2>💳 الدفع</h2>
 <div class="info" id="payInfo"></div>
 <button onclick="openVodafone()">فتح فودافون كاش</button>
-<br>
-<button onclick="paid()">أنا دفعت ✅</button>
+<button onclick="goProof()">تم الدفع</button>
 </section>
 
-<!-- صفحة 4 -->
+<!-- صفحة 4 (رفع الصورة) -->
 <section id="s4">
-<h2>📲 تحويل للواتساب</h2>
-<p style="color:#fff">جاري إرسال البيانات...</p>
+<h2>📸 إثبات التحويل</h2>
+<p style="color:#fff">ارفع صورة مكتوب فيها "تم التحويل بنجاح"</p>
+<input type="file" class="file" id="proof" accept="image/*">
+<button onclick="sendWhats()">إرسال والمتابعة</button>
 </section>
 
 <script>
 let pack="", price="", id="";
-
-const vodafoneNumber = "01036733858";
-const whatsappNumber = "201104275701";
+const vodafoneNumber="01036733858";
+const whatsappNumber="201104275701";
 
 function choose(p,pr){
-    pack=p; price=pr;
+    pack=p;price=pr;
     s1.classList.remove("active");
     s2.classList.add("active");
 }
 function goPay(){
-    id = playerId.value;
+    id=playerId.value;
     if(!id){alert("اكتب ID");return;}
     s2.classList.remove("active");
     s3.classList.add("active");
-    payInfo.innerHTML = `
-    الباقة: ${pack}<br>
-    السعر: ${price} جنيه<br><br>
-    حول على رقم:<br>
-    <b>${vodafoneNumber}</b>
-    `;
+    payInfo.innerHTML=`الباقة: ${pack}<br>السعر: ${price} جنيه<br><br>حول على:<br><b>${vodafoneNumber}</b>`;
 }
 function openVodafone(){
-    window.location.href = "tel:*9*7*"+vodafoneNumber+"*"+price+"#";
+    window.location.href="tel:*9*7*"+vodafoneNumber+"*"+price+"#";
 }
-function paid(){
+function goProof(){
     s3.classList.remove("active");
     s4.classList.add("active");
-    let msg = `تم الدفع ✅
+}
+function sendWhats(){
+    if(!proof.files.length){alert("ارفع صورة التحويل");return;}
+    let msg=`تم الدفع ✅
 الباقة: ${pack}
 السعر: ${price} جنيه
-ID اللاعب: ${id}
-طريقة الدفع: Vodafone Cash`;
-    let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
-    setTimeout(()=>{window.location.href=url},1500);
+ID: ${id}
+⚠️ مرفق صورة التحويل`;
+    window.location.href=`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
 </script>
 
