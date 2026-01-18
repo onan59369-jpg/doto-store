@@ -8,60 +8,66 @@
 <style>
 body{
     margin:0;
-    font-family:Tahoma, Arial;
+    font-family:Tahoma;
     background:#000;
     color:#00bfff;
     text-align:center;
 }
+
+/* شريط الخصوصية */
+.privacy-bar{
+    font-size:12px;
+    padding:8px;
+    background:#050505;
+    color:#aaa;
+    border-bottom:1px solid #00bfff;
+}
+.privacy-bar span{
+    color:#00bfff;
+}
+
+/* الترحيب */
+.welcome{
+    margin:10px 0;
+    font-size:14px;
+    color:#fff;
+    text-shadow:0 0 8px #00bfff;
+}
+
 header{
-    padding:20px;
+    padding:15px;
     font-size:26px;
     font-weight:bold;
     border-bottom:2px solid #00bfff;
-    text-shadow:0 0 10px #00bfff;
+    text-shadow:0 0 15px #00bfff;
 }
+
 section{
-    padding:20px;
     display:none;
+    padding:20px;
 }
-.active{
-    display:block;
-}
-.packages{
+.active{display:block;}
+
+.cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     gap:15px;
 }
 .card{
     border:2px solid #00bfff;
     border-radius:15px;
-    padding:15px;
+    padding:20px;
     cursor:pointer;
-    transition:0.3s;
     box-shadow:0 0 15px rgba(0,191,255,0.3);
 }
 .card:hover{
+    box-shadow:0 0 30px #00bfff;
     transform:scale(1.05);
-    box-shadow:0 0 25px #00bfff;
 }
 .price{
+    color:#fff;
     margin-top:10px;
     font-size:18px;
-    color:#fff;
-}
-button{
-    background:#00bfff;
-    color:#000;
-    border:none;
-    padding:12px 20px;
-    border-radius:25px;
-    font-size:16px;
-    cursor:pointer;
-    margin-top:15px;
-    box-shadow:0 0 15px #00bfff;
-}
-button:hover{
-    background:#009acd;
 }
 input{
     width:90%;
@@ -71,103 +77,172 @@ input{
     background:#000;
     color:#00bfff;
     font-size:16px;
-    margin-top:15px;
     text-align:center;
 }
-.confirm{
-    font-size:18px;
-    line-height:1.8;
-    color:#fff;
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border-radius:30px;
+    border:none;
+    background:#00bfff;
+    color:#000;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 0 20px #00bfff;
 }
-footer{
-    padding:15px;
-    border-top:1px solid #00bfff;
-    font-size:14px;
-    color:#aaa;
+button:hover{background:#009acd;}
+.info{
+    font-size:18px;
+    color:#fff;
+    line-height:1.8;
 }
 </style>
 </head>
 
 <body>
 
+<!-- سياسة الخصوصية -->
+<div class="privacy-bar">
+🔒 <span>سياسة الخصوصية:</span> بياناتك آمنة، ولا يتم حفظ أي معلومات خارج عملية الشحن فقط.
+</div>
+
+<!-- ترحيب -->
+<div class="welcome">
+🔥 أهلاً بيك في مكان الشحن المضمون – السرعة والجودة عنواننا 🔥
+</div>
+
 <header>🔥 DOTO STORE 🔥</header>
 
-<!-- صفحة الباقات -->
-<section id="step1" class="active">
-    <h2>👇 اختر الباقة</h2>
-    <div class="packages">
-        <div class="card" onclick="choose('عضوية أسبوعية - 100 جنيه')">
-            عضوية أسبوعية
-            <div class="price">100 جنيه</div>
-        </div>
-        <div class="card" onclick="choose('عضوية شهرية - 350 جنيه')">
-            عضوية شهرية
-            <div class="price">350 جنيه</div>
-        </div>
-        <div class="card" onclick="choose('تصريحات المستوى - 25 جنيه')">
-            تصريحات المستوى
-            <div class="price">25 جنيه</div>
-        </div>
-        <div class="card" onclick="choose('بويا باس - 50 جنيه')">
-            بويا باس
-            <div class="price">50 جنيه</div>
-        </div>
-        <div class="card" onclick="choose('100 💎 - 50 جنيه')">
-            100 💎
-            <div class="price">50 جنيه</div>
-        </div>
-        <div class="card" onclick="choose('200 💎 - 100 جنيه')">
-            200 💎
-            <div class="price">100 جنيه</div>
-        </div>
-    </div>
+<!-- صفحة 1 -->
+<section id="s1" class="active">
+<h2>👇 اختر الشحنة</h2>
+
+<div class="cards">
+
+<div class="card" onclick="choose('عضوية شهرية (لحد شهر 1)','350')">
+عضوية شهرية
+<div class="price">350 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('عضوية أسبوعية (لحد شهر 1)','100')">
+عضوية أسبوعية
+<div class="price">100 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('تصريحات المستوى (لحد شهر 1)','25')">
+تصريحات المستوى
+<div class="price">25 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('البويا باس (لحد شهر 1)','50')">
+البويا باس
+<div class="price">50 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('الضربات الدولا ✓ أفضل','50')">
+الضربات الدولا
+<div class="price">50 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('100 💎','50')">
+100 💎
+<div class="price">50 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('200 💎','100')">
+200 💎
+<div class="price">100 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('300 💎','130')">
+300 💎
+<div class="price">130 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('500 💎','250')">
+500 💎
+<div class="price">250 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('1000 💎','450')">
+1000 💎
+<div class="price">450 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('2200 💎','900')">
+2200 💎
+<div class="price">900 جنيه</div>
+</div>
+
+<div class="card" onclick="choose('3640 💎','1400')">
+3640 💎
+<div class="price">1400 جنيه</div>
+</div>
+
+</div>
 </section>
 
-<!-- صفحة ID -->
-<section id="step2">
-    <h2>🎮 اكتب ID اللاعب</h2>
-    <input type="text" id="playerId" placeholder="اكتب الـ ID هنا">
-    <br>
-    <button onclick="goConfirm()">متابعة</button>
+<!-- صفحة 2 -->
+<section id="s2">
+<h2>🎮 اكتب ID اللاعب</h2>
+<input id="playerId" placeholder="ID هنا">
+<br>
+<button onclick="goPay()">متابعة</button>
 </section>
 
-<!-- صفحة التأكيد -->
-<section id="step3">
-    <h2>✅ تأكيد الطلب</h2>
-    <div class="confirm" id="confirmText"></div>
-    <p style="color:#00bfff;margin-top:20px;">
-        بعد الدفع سيتم تنفيذ الطلب فورًا 🚀
-    </p>
+<!-- صفحة 3 -->
+<section id="s3">
+<h2>💳 الدفع</h2>
+<div class="info" id="payInfo"></div>
+<button onclick="openVodafone()">فتح فودافون كاش</button>
+<br>
+<button onclick="paid()">أنا دفعت ✅</button>
 </section>
 
-<footer>
-    دعم واتساب: 01104275701 <br>
-    الدفع Vodafone Cash: 01036733858
-</footer>
+<!-- صفحة 4 -->
+<section id="s4">
+<h2>📲 تحويل للواتساب</h2>
+<p style="color:#fff">جاري إرسال البيانات...</p>
+</section>
 
 <script>
-let selectedPackage = "";
+let pack="", price="", id="";
 
-function choose(pkg){
-    selectedPackage = pkg;
-    document.getElementById("step1").classList.remove("active");
-    document.getElementById("step2").classList.add("active");
+const vodafoneNumber = "01036733858";
+const whatsappNumber = "201104275701";
+
+function choose(p,pr){
+    pack=p; price=pr;
+    s1.classList.remove("active");
+    s2.classList.add("active");
 }
-
-function goConfirm(){
-    let id = document.getElementById("playerId").value;
-    if(id === ""){
-        alert("اكتب ID اللاعب");
-        return;
-    }
-    document.getElementById("step2").classList.remove("active");
-    document.getElementById("step3").classList.add("active");
-    document.getElementById("confirmText").innerHTML =
-        "📦 الباقة: " + selectedPackage + "<br>" +
-        "🎮 ID اللاعب: " + id + "<br><br>" +
-        "💙 شكراً لاختيارك DOTO STORE";
+function goPay(){
+    id = playerId.value;
+    if(!id){alert("اكتب ID");return;}
+    s2.classList.remove("active");
+    s3.classList.add("active");
+    payInfo.innerHTML = `
+    الباقة: ${pack}<br>
+    السعر: ${price} جنيه<br><br>
+    حول على رقم:<br>
+    <b>${vodafoneNumber}</b>
+    `;
+}
+function openVodafone(){
+    window.location.href = "tel:*9*7*"+vodafoneNumber+"*"+price+"#";
+}
+function paid(){
+    s3.classList.remove("active");
+    s4.classList.add("active");
+    let msg = `تم الدفع ✅
+الباقة: ${pack}
+السعر: ${price} جنيه
+ID اللاعب: ${id}
+طريقة الدفع: Vodafone Cash`;
+    let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    setTimeout(()=>{window.location.href=url},1500);
 }
 </script>
 
 </body>
-                </html>
+    </html>
